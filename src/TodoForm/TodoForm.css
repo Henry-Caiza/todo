@@ -1,0 +1,116 @@
+form {
+    width: 80%;
+    max-width: 600px;
+    background-color: #52525bf0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+label {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #74ff03d8;
+    margin-bottom: 16px;
+}
+
+textarea {
+    background-color: #181818d8;
+    border-radius: 2px;
+    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+    color: #74ff03d8;
+    font-size: 14px;
+    text-align: center;
+    padding: 12px;
+    height: 116px;
+    width: calc(100% - 12px);
+    margin-bottom: 10px;
+}
+
+textarea::placeholder {
+    color: #A5A5A5;
+    font-weight: 400;
+}
+
+textarea:focus {
+    outline-color: #62d703;
+}
+
+.TodoForm-buttonContainer {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.TodoForm-button {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 2px;
+    border: none;
+    font-size: 14px;
+}
+
+.TodoForm-button--add {
+    border: 2px solid #76ff03;
+    background: transparent;
+    border-radius: 30px;
+    box-shadow: 0px 5px 15px rgba(97, 250, 135, 0.35);
+    color: #bcf88a;
+}
+
+.TodoForm-button--add:hover {
+    background: #76ff03;
+    color: #367303;
+}
+
+.TodoForm-button--cancel {
+    background: transparent;
+    border: 2px solid #ef4444;
+    border-radius: 30px;
+    box-shadow: 0px 5px 15px rgba(250, 100, 97, 0.35);
+    color: #fca5a5;
+}
+
+.TodoForm-button--cancel:hover {
+    background: #ef4444;
+    color: #7f1d1d;
+}
+
+@media (min-width: 640px) {
+    form {
+        width: 90%;
+        padding: 24px 40px;
+    }
+
+    label {
+        font-size: 24px;
+        margin-bottom: 26px;
+    }
+
+    textarea {
+
+        font-size: 20px;
+        width: calc(100% - 25px);
+        height: 156px;
+
+    }
+
+
+    .TodoForm-button {
+        font-size: 20px;
+        font-weight: 400;
+        width: 120px;
+        height: 48px;
+
+    }
+
+
+}

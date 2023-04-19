@@ -1,0 +1,25 @@
+.empty-container {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.empty {
+    width: 250px;
+    height: 250px;
+
+}
+
+.p-empty {
+    color: #74ff0360;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .empty {
+        width: 330px;
+        height: 330px;
+    }
+}
