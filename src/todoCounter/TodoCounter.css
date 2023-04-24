@@ -6,9 +6,12 @@
     color: #90d339;
 }
 
+.TodoCounter--loading {
+    color: #90d33933;
+}
+
 @media (min-width: 640px) {
     .TodoCounter {
         font-size: 24px;
-
     }
 }

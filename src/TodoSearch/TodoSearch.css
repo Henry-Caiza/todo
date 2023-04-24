@@ -26,6 +26,10 @@
     box-shadow: 0 0 10px #76FF03;
 }
 
+.TodoSearch:disabled {
+    background-color: #89ba4807;
+}
+
 @media (min-width: 640px) {
     .TodoSearch {
         height: 64px;

@@ -3,3 +3,16 @@ ul {
     padding: 0 0 56px 0;
     list-style: none;
 }
+
+.p-li {
+    margin-top: 24px;
+    color: rgba(172, 255, 47, 0.685);
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+@media (min-width:620px) {
+    .p-li {
+        font-size: 16px;
+    }
+}
