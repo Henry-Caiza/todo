@@ -1,27 +1,30 @@
 import React from "react";
 import './TodoForm.css'
+import { useNavigate } from "react-router-dom";
 
-function TodoForm({
-    addTodo,
-    setOpenModal
-}) {
-    const [newTodoValue, setNewTodoValue] = React.useState('');
+function TodoForm(props) {
+    const navigate = useNavigate();
+
+    const [newTodoValue, setNewTodoValue] = React.useState(props.defaultTodoText || '');
 
 
     const onCancel = () => {
-        setOpenModal(false);
+        navigate('/')
     }
+
     const onChange = (event) => {
         setNewTodoValue(event.target.value)
     }
+
     const onSubmit = (event) => {
         event.preventDefault();
-        addTodo(newTodoValue);
-        setOpenModal(false)
+        props.submitEvent(newTodoValue);
+        navigate('/')
+
     }
     return (
         <form onSubmit={onSubmit}>
-            <label>Escribe tu nuevo TODO</label>
+            <label>{props.label}</label>
             <textarea value={newTodoValue}
                 onChange={onChange}
                 placeholder="Revisar los videos de React"></textarea>
@@ -30,7 +33,7 @@ function TodoForm({
                     className="TodoForm-button TodoForm-button--cancel"
                     onClick={onCancel}>Cancelar</button>
                 <button type="submit"
-                    className="TodoForm-button TodoForm-button--add">Añadir</button>
+                    className="TodoForm-button TodoForm-button--add">Guardar</button>
             </div>
         </form>
     )

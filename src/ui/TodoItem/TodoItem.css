@@ -7,12 +7,13 @@
     justify-content: center;
     align-items: center;
     margin-top: 24px;
-    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+
+    /* box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15); */
 }
 
 .TodoItem-p {
-    margin: 24px 0 24px 24px;
-    width: calc(100% - 120px);
+    margin: 24px 0 24px -40px;
+    width: calc(100% - 190px);
     font-size: 14px;
     line-height: 16px;
     font-weight: 300;
@@ -22,6 +23,12 @@
     text-decoration: line-through;
 
     color: #abbb9e;
+}
+
+.Icon-Container {
+    position: absolute;
+    right: 0;
+    display: flex;
 }
 
 .Icon {
@@ -58,9 +65,14 @@
 }
 
 .Icon-delete {
-    position: absolute;
-    right: 0;
     background-image: url('delete.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Icon-edit {
+    background-image: url('edit.png');
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: center;
@@ -68,6 +80,11 @@
 
 .Icon-delete:hover {
     background-image: url('delete2.png');
+}
+
+.Icon-edit:hover {
+    background-image: url('edit2.png');
+    filter: drop-shadow(0 0 0.45rem rgba(98, 213, 40, 0.521));
 }
 
 @media (min-width: 768px) {
@@ -81,9 +98,11 @@
         background-size: 100%;
     }
 
-    .Icon-delete {
+    .Icon-delete,
+    .Icon-edit {
 
         background-size: 50%;
 
     }
+
 }
