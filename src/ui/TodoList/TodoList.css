@@ -4,6 +4,7 @@ ul {
     list-style: none;
 }
 
+
 .p-li {
     margin-top: 24px;
     color: rgba(172, 255, 47, 0.685);
@@ -11,8 +12,117 @@ ul {
     font-weight: bolder;
 }
 
+.checkBox-container,
+.checkBox-container2 {
+    display: flex;
+    margin-top: 48px;
+    gap: 8px;
+    align-items: center;
+    border: 1px solid #74ff038e;
+    border-radius: 60px;
+    width: 150px;
+}
+
+
+.checks-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 15px;
+
+    margin: 8px auto 8px 12px;
+    font-size: 10px;
+    user-select: none;
+}
+
+.container .input {
+    position: absolute;
+    opacity: 0;
+
+}
+
+.checkmark {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: 14px;
+    width: 14px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.container:hover .input~.checkmark {
+    background-color: #ccc;
+}
+
+.container .input:checked~.checkmark {
+    background-color: #74ff03b7;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container .input:checked~.checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    top: 4px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+}
+
 @media (min-width:620px) {
     .p-li {
         font-size: 16px;
+    }
+
+    .checkBox-container,
+    .checkBox-container2 {
+        width: 300px;
+    }
+
+
+    .checks-wrapper {
+        gap: 32px;
+    }
+
+    .container {
+
+        padding-left: 35px;
+
+        margin: 12px auto 12px auto;
+        cursor: pointer;
+        font-size: 16px;
+
+    }
+
+    .container .input {
+        cursor: pointer;
+    }
+
+    .checkmark {
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+    }
+
+    .container .checkmark:after {
+        top: 6px;
+        left: 6px;
+        width: 8px;
+        height: 8px;
+
     }
 }

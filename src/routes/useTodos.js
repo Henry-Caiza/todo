@@ -10,8 +10,10 @@ function useTodos() {
         error,
     } = useLocalStorage('TODOS_V2', []);
 
+
     const [searchValue, setSearchValue] = React.useState('');
 
+    // const [searchCompleted, setSearchCompleted] = React.useState('');
 
     const completedTodos = todos.filter(todo => !!todo.completed).length;
     const totalTodos = todos.length;
@@ -22,6 +24,22 @@ function useTodos() {
         searchedTodos = todos;
     } else {
         searchedTodos = todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase()));
+    }
+
+    let searchedTodosCompleted = []
+
+    if (searchedTodosCompleted.length >= 1) {
+        searchedTodosCompleted = todos;
+    } else {
+        searchedTodosCompleted = todos.filter(todo => !todo.completed);
+    }
+
+    let searchedTodosIncompleted = []
+
+    if (searchedTodosIncompleted.length >= 1) {
+        searchedTodosIncompleted = todos;
+    } else {
+        searchedTodosIncompleted = todos.filter(todo => !!todo.completed);
     }
 
     const addTodo = (text) => {
@@ -71,7 +89,10 @@ function useTodos() {
         totalTodos,
         completedTodos,
         searchValue,
+        searchedTodosCompleted,
+        searchedTodosIncompleted,
         searchedTodos,
+        todos,
         getTodo
     }
 
@@ -81,10 +102,12 @@ function useTodos() {
         completeTodo,
         deleteTodo,
         editTodo,
-        sincronizeTodos
+        sincronizeTodos,
+
     }
     return { states, stateUpdaters }
 }
+
 function newTodoId(todoList) {
     if (!todoList.length) {
         return 1;

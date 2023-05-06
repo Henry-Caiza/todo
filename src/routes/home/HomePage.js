@@ -27,9 +27,11 @@ function HomePage() {
         loading,
         searchedTodos,
         totalTodos,
+        todos,
         completedTodos,
         searchValue,
-        //openModal,
+        searchedTodosCompleted,
+        searchedTodosIncompleted
     } = states;
 
     const {
@@ -38,7 +40,7 @@ function HomePage() {
         // setOpenModal,
         setSearchValue,
         // addTodo,
-        sincronizeTodos
+        sincronizeTodos,
     } = stateUpdaters;
 
     return (
@@ -59,6 +61,11 @@ function HomePage() {
                 totalTodos={totalTodos}
                 searchedTodos={searchedTodos}
                 searchText={searchValue}
+                todos={todos}
+
+                searchedTodosCompleted={searchedTodosCompleted}
+                searchedTodosIncompleted={searchedTodosIncompleted}
+
                 onError={() => <TodosError />}
                 onLoading={() => <TodosLoading />}
                 onEmptyTodos={() => <EmptyTodos />}
